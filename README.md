@@ -1,74 +1,196 @@
-# 🎬 API de Filmes — Django REST Framework
+# 🎬 API de Filmes com Django REST Framework
 
-Projeto desenvolvido em Python utilizando **Django REST Framework** para a criação de uma API REST de gerenciamento de filmes e gêneros cinematográficos.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+  <img src="https://img.shields.io/badge/REST%20API-009688?style=for-the-badge" alt="REST API">
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+</p>
 
-A aplicação permite consultar, cadastrar, editar e excluir registros de filmes e gêneros, utilizando uma estrutura de banco de dados relacional e serialização de dados no formato JSON.
+## 📌 Sobre o projeto
 
-## 🚀 Tecnologias utilizadas
+Este projeto consiste no desenvolvimento de uma API REST para gerenciamento de filmes, utilizando Python, Django e Django REST Framework.
 
-- Python
-- Django
-- Django REST Framework (DRF)
-- Django Filter
-- SQLite (banco de dados padrão do Django)
-- API REST e JSON
-- Autenticação por Token
+A aplicação foi desenvolvida com o objetivo de colocar em prática conceitos de desenvolvimento backend, criação de endpoints, serialização de dados, operações CRUD e integração com banco de dados.
 
-## ⚙️ Funcionalidades
+O projeto também possui uma página HTML de boas-vindas e um script para importação de dados a partir de um arquivo CSV.
 
-- Cadastro e gerenciamento de filmes.
-- Cadastro e gerenciamento de gêneros cinematográficos.
-- Relacionamento entre filmes e gêneros.
-- Consulta e filtragem de registros.
-- Autenticação por token.
-- Controle de permissões de acesso.
-- Administração de dados pelo Django Admin.
-- Testes dos endpoints via navegador e terminal utilizando cURL.
+## 🎯 Objetivos
 
-## 📋 Estrutura dos dados
+- Desenvolver uma API REST utilizando Django.
+- Implementar operações de gerenciamento de filmes.
+- Trabalhar com modelos, views e serializers.
+- Utilizar banco de dados SQLite.
+- Praticar requisições HTTP e manipulação de dados JSON.
+- Importar dados de filmes utilizando arquivos CSV.
 
-**Filmes**
-- Título
-- Descrição
-- Ano de lançamento
-- Gênero
-- Duração
+## ✨ Funcionalidades
 
-**Gêneros**
-- Nome
+- 🎥 Gerenciamento de filmes.
+- 📋 Consulta de informações cadastradas.
+- ➕ Cadastro de filmes.
+- ✏️ Atualização de registros.
+- 🗑️ Exclusão de registros.
+- 📄 Página HTML de boas-vindas.
+- 📥 Importação de dados por meio de arquivo CSV.
 
-## 🎯 Objetivo
+*As operações disponíveis dependem das rotas e dos métodos implementados no código.*
 
-Consolidar conhecimentos em desenvolvimento web com Python, construção de APIs REST, operações CRUD, modelagem de dados, serialização JSON, autenticação e controle de acesso utilizando Django REST Framework.
+## 🛠️ Tecnologias utilizadas
 
-## ▶️ Como executar o projeto
+- **Python** — linguagem de programação.
+- **Django** — framework para desenvolvimento web.
+- **Django REST Framework** — desenvolvimento de APIs REST.
+- **SQLite** — banco de dados relacional.
+- **HTML5** — estruturação da página inicial.
+- **CSV** — armazenamento e importação de dados.
+- **Git e GitHub** — controle de versão e hospedagem do código.
 
-1. Crie e ative um ambiente virtual.
-2. Instale as dependências:
+## 📂 Estrutura do projeto
 
-   ```bash
-   pip install django django-filter djangorestframework
-   ```
+```text
+projeto4/
+│
+├── filmes/
+│   ├── migrations/
+│   │   └── 0001_initial.py
+│   ├── templates/
+│   │   └── inicio.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   └── views.py
+│
+├── projeto4/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── base_filmes.csv
+├── importarDados.py
+├── manage.py
+├── requirements.txt
+└── db.sqlite3
+```
 
-3. Execute as migrações do banco de dados:
+## ⚙️ Pré-requisitos
 
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
+Para executar o projeto, você precisará ter instalado:
 
-4. Crie um superusuário:
+- Python 3.
+- pip.
+- Git, caso deseje clonar o repositório.
 
-   ```bash
-   python manage.py createsuperuser
-   ```
+## 🚀 Como executar o projeto
 
-5. Inicie o servidor:
+### 1. Clone o repositório
 
-   ```bash
-   python manage.py runserver
-   ```
+```bash
+git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+```
 
-A API ficará disponível localmente em `http://127.0.0.1:8000/`.
+### 2. Entre na pasta do projeto
 
-**Projeto acadêmico desenvolvido para praticar a criação e o gerenciamento de APIs REST com Django.**
+```bash
+cd SEU-REPOSITORIO
+```
+
+### 3. Crie um ambiente virtual
+
+```bash
+python -m venv venv
+```
+
+### 4. Ative o ambiente virtual
+
+No Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Execute as migrações
+
+```bash
+python manage.py migrate
+```
+
+### 7. Inicie o servidor
+
+```bash
+python manage.py runserver
+```
+
+A aplicação estará disponível em:
+
+http://127.0.0.1:8000/
+
+## 🔌 Endpoints da API
+
+A API utiliza os métodos HTTP para realizar operações sobre os filmes.
+
+| Método | Descrição |
+|---|---|
+| GET | Consultar filmes |
+| POST | Cadastrar filmes |
+| PUT | Atualizar um filme |
+| PATCH | Atualizar parcialmente um filme |
+| DELETE | Excluir um filme |
+
+Os caminhos exatos dos endpoints devem ser consultados no arquivo `filmes/urls.py` ou nas rotas definidas em `projeto4/urls.py`.
+
+### 🔐 Autenticação
+
+Caso a API exija autenticação, as requisições deverão incluir as credenciais ou o token configurado no Django REST Framework.
+
+O método de autenticação e as permissões disponíveis dependem das configurações da aplicação.
+
+## 📥 Importação de dados
+
+O projeto possui o arquivo `base_filmes.csv`, que pode ser utilizado como fonte de dados para os filmes.
+
+O script `importarDados.py` é destinado à importação desses registros para a aplicação.
+
+Para executá-lo, utilize:
+
+```bash
+python importarDados.py
+```
+
+**Observação:** execute o comando após verificar se o script está configurado corretamente e se as migrações do banco de dados foram aplicadas.
+
+## 🧠 Principais conceitos praticados
+
+- Desenvolvimento de APIs REST.
+- Operações CRUD.
+- Modelagem de dados com Django.
+- Serialização de dados.
+- Requisições HTTP.
+- Integração com banco de dados.
+- Importação de arquivos CSV.
+- Organização de aplicações Django.
+
+## 👨‍💻 Desenvolvedor
+
+**Muller Araújo do Vale**
+
+Desenvolvedor com experiência em Python, C#, Java, Angular, OutSystems e bancos de dados relacionais, com interesse em desenvolvimento backend, APIs REST e arquitetura de sistemas.
+
+- 💼 [LinkedIn](https://www.linkedin.com/)
+- 🐙 [GitHub](https://github.com/)
+
+---
+
+<p align="center">
+  Desenvolvido com Python e Django 🚀
+</p>

@@ -186,8 +186,7 @@ python importarDados.py
 
 Desenvolvedor com experiência em Python, C#, Java, Angular, OutSystems e bancos de dados relacionais, com interesse em desenvolvimento backend, APIs REST e arquitetura de sistemas.
 
-- 💼 [LinkedIn](https://www.linkedin.com/)
-- 🐙 [GitHub](https://github.com/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/muller-araujo-65714b15/)
 
 ---
 
